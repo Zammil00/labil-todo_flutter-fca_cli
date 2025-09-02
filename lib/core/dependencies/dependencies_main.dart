@@ -27,5 +27,14 @@ _todo() {
     ..registerLazySingleton(() => AddTodoUseCase(repository: sl()))
     ..registerLazySingleton(() => DeleteTodoUseCase(repository: sl()))
     ..registerLazySingleton(() => GetTodosUseCase(repository: sl()))
-    ..registerLazySingleton(() => UpdateTodoUseCase(repository: sl()));
+    ..registerLazySingleton(() => UpdateTodoUseCase(repository: sl()))
+    // BLOCS
+    ..registerFactory(
+      () => TodoBloc(
+        addTodoUseCase: sl(),
+        deleteTodoUseCase: sl(),
+        getTodosUseCase: sl(),
+        updateTodoUseCase: sl(),
+      ),
+    );
 }
