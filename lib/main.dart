@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Labil Todo',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: TodoPage(),
